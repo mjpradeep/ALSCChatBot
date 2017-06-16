@@ -1,0 +1,15 @@
+---
+declared-services:
+  my-conversation-service:
+    label: conversation
+    plan: free
+applications:
+- name: ALSCChatBot
+  command: npm start
+  path: .
+  memory: 1024M
+  instances: 1
+  services:
+  - Conversation-ALSC
+  env:
+    NPM_CONFIG_PRODUCTION: false
